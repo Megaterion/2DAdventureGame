@@ -1,4 +1,5 @@
 import pygame 
+import sys
 from settings import *
 
 class Player(pygame.sprite.Sprite):
@@ -15,6 +16,10 @@ class Player(pygame.sprite.Sprite):
 
 	def input(self):
 		keys = pygame.key.get_pressed()
+
+		if keys[pygame.K_ESCAPE]:
+			pygame.quit()
+			sys.exit()
 
 		if keys[pygame.K_UP]:
 			self.direction.y = -1
